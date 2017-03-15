@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Places</title>
+  </head>
+  <body>
+    <div class="container">
+      {% if allplaces is not empty %}
+        <h1>Vacation Memories<h1>
+        <p>Here are the places:</p>
+        {% for place in allplaces %}
+          <p> {{ place.getCities }} </p>
+        {% endfor %}
+      {% endif %}
+      <br>
+      <form action='/places' method='post'>
+        <label for='user_city'>City Name</label>
+        <input id='user_city' name='user_city' type='text'>
+        <button type='submit'>Add Place</button>
+      </form>
+      <form action='/delete_place' method='post'>
+        <button type='submit'>Remove All Places</button>
+      </form>
+    </div>
+  </body>
+</html>
