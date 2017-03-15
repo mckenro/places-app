@@ -3,10 +3,10 @@
     private $timethere;
     private $photo;
 
-    function __construct($cityname){
+    function __construct($cityname, $timethere, $photo){
       $this->cityname = $cityname;
-      // $this->timethere = $timethere;
-      // $this->photo = $photo;
+      $this->timethere = $timethere;
+      $this->photo = $photo;
       }
 
       function setCities($new_name){

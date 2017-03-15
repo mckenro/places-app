@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Places</title>
-  </head>
-  <body>
+{% include 'baseTop.html.twig' %}
     <div class="container">
       <h1>Thanks for adding a city!</h1>
       <h4>The city you added is: {{ new_city.getCities }}</h4>
+      <h4>The dates you were there: {{ new_city.getTimes }}</h4>
       <p><a href='/'>View the places you've been.</a></p>
     </div>
   </body>

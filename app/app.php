@@ -21,7 +21,7 @@
       });
 
     $app->post("/places", function() use ($app){
-        $place = new Place($_POST['user_city']);
+        $place = new Place($_POST['user_city'], $_POST['user_date'], $_POST['user_photo']);
         $place->save();
         return $app['twig']->render('success.html.twig', array('new_city' => $place));
     });

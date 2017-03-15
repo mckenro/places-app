@@ -1,22 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Places</title>
-  </head>
-  <body>
+{% include 'baseTop.html.twig' %}
     <div class="container">
       {% if allplaces is not empty %}
-        <h1>Vacation Memories<h1>
+        <h1>Vacation Memories</h1>
         <p>Here are the places:</p>
         {% for place in allplaces %}
           <p> {{ place.getCities }} </p>
+          <p> {{ place.getTimes }} </p>
+          <img src= {{ place.getPhotos }} >
         {% endfor %}
       {% endif %}
       <br>
       <form action='/places' method='post'>
         <label for='user_city'>City Name</label>
         <input id='user_city' name='user_city' type='text'>
+        <label for='user_date'>What dates were you there</label>
+        <input id='user_date' name='user_date' type='text'>
+        <label for='user_photo'>Add url of a photo!</label>
+        <input id='user_photo' name='user_photo' type='text'>
         <button type='submit'>Add Place</button>
       </form>
       <form action='/delete_place' method='post'>
